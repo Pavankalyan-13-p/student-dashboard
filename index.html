@@ -306,12 +306,26 @@ input[type=number] { -moz-appearance: textfield; }
 ═══════════════════════════════════════════════════ */
 #main {
   margin-left: var(--sidebar-w);
+  width: calc(100% - var(--sidebar-w));
+  max-width: calc(100% - var(--sidebar-w));
+  min-width: 0;
   flex: 1;
   display: flex; flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-.view { display: none; padding: 32px; min-height: 100vh; }
+.view {
+  display: none;
+  padding: 28px 36px 40px;
+  min-height: 100vh;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+
 .view.active { display: block; animation: view-enter 0.4s ease; }
 @keyframes view-enter {
   from { opacity: 0; transform: translateY(16px); }
@@ -1491,16 +1505,18 @@ input[type=number] { -moz-appearance: textfield; }
               linear-gradient(180deg, rgba(20,28,45,0.6) 0%, rgba(10,14,26,0.9) 100%);
   border: 1px solid rgba(255,87,34,0.3);
   border-radius: var(--radius);
-  padding: 24px 28px;
+  padding: 22px 24px;
   margin-bottom: 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
   box-shadow: 0 12px 35px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+  width: 100%;
+  box-sizing: border-box;
 }
 .health-hero::before {
   content: '';
@@ -1559,7 +1575,7 @@ input[type=number] { -moz-appearance: textfield; }
 /* Biometric Control Sliders */
 .health-inputs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); width: 100%; box-sizing: border-box; width: 100%; box-sizing: border-box;
   gap: 16px;
   margin-bottom: 24px;
 }
@@ -1628,7 +1644,7 @@ input[type=number] { -moz-appearance: textfield; }
 /* Body Aim Selector Cards */
 .aim-selector-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); width: 100%; box-sizing: border-box;
   gap: 12px;
   margin-bottom: 24px;
 }
@@ -1947,6 +1963,35 @@ input[type=number] { -moz-appearance: textfield; }
   font-size: 0.75rem;
 }
 
+
+/* Dashboard Avatar */
+.dash-avatar-wrap {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+.dash-avatar-wrap:hover {
+  transform: scale(1.05);
+}
+.dash-avatar-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00d4ff;
+  box-shadow: 0 0 20px rgba(0,212,255,0.45);
+  display: block;
+}
+.dash-avatar-wrap .avatar-status-dot {
+  bottom: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+}
+
 </style>
 </head>
 <body>
@@ -2032,13 +2077,19 @@ input[type=number] { -moz-appearance: textfield; }
         </div>
       </div>
 
-      <div style="padding: 32px 32px 0;" class="mobile-no-top-pad">
+      <div class="mobile-no-top-pad">
       <div class="greeting-section">
-        <div class="greeting-left">
-          <div class="greeting-title" id="greeting-text">Bonjour! 👋</div>
-          <div class="greeting-date">
-            <span id="date-text">Loading…</span>
-            <span class="time-badge" id="time-badge">00:00</span>
+        <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+          <div class="dash-avatar-wrap" onclick="showView('health')" style="cursor:pointer;" title="View Athlete Profile & Physical Health">
+            <img src="profile.jpg" alt="Pavan Kalyan" class="dash-avatar-img" onerror="this.onerror=null; this.parentElement.style.display='none';">
+            <span class="avatar-status-dot"></span>
+          </div>
+          <div class="greeting-left">
+            <div class="greeting-title" id="greeting-text">Bonjour, Pavan! 👋</div>
+            <div class="greeting-date">
+              <span id="date-text">Loading…</span>
+              <span class="time-badge" id="time-badge">00:00</span>
+            </div>
           </div>
         </div>
         <div>
@@ -2316,7 +2367,7 @@ input[type=number] { -moz-appearance: textfield; }
         <img src="profile.jpg" alt="Pavan" class="mobile-avatar-pill">
       </div>
 
-      <div style="padding: 32px 32px 0;" class="mobile-no-top-pad">
+      <div class="mobile-no-top-pad">
 
         <!-- Hero Section with LinkedIn Profile Avatar -->
         <div class="health-hero">
