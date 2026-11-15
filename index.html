@@ -1432,6 +1432,521 @@ input[type=number] { -moz-appearance: textfield; }
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
   .view { padding-bottom: calc(32px + env(safe-area-inset-bottom)); }
 }
+
+/* ═══════════════════════════════════════════════════
+   PHYSICAL HEALTH & GYM ATHLETIC DASHBOARD STYLES
+═══════════════════════════════════════════════════ */
+.badge-health-pro {
+  font-size: 0.62rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ff5722, #f59e0b);
+  color: #fff;
+  padding: 2px 7px;
+  border-radius: 12px;
+  margin-left: auto;
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 10px rgba(255,87,34,0.4);
+}
+
+.user-avatar-wrap {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.user-profile-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00d4ff;
+  box-shadow: 0 0 14px rgba(0,212,255,0.45);
+  display: block;
+}
+.avatar-status-dot {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 12px;
+  height: 12px;
+  background: #10b981;
+  border-radius: 50%;
+  border: 2px solid var(--bg-primary);
+  box-shadow: 0 0 8px #10b981;
+}
+.mobile-avatar-pill {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00d4ff;
+  box-shadow: 0 0 8px rgba(0,212,255,0.5);
+  cursor: pointer;
+}
+
+/* Gym Environment Theme */
+.health-hero {
+  background: radial-gradient(circle at 10% 20%, rgba(255,87,34,0.15) 0%, rgba(16,185,129,0.08) 50%, rgba(10,14,26,0.95) 100%),
+              linear-gradient(180deg, rgba(20,28,45,0.6) 0%, rgba(10,14,26,0.9) 100%);
+  border: 1px solid rgba(255,87,34,0.3);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.health-hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, rgba(255,87,34,0.25), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.health-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.health-avatar-large {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ff5722;
+  box-shadow: 0 0 24px rgba(255,87,34,0.55), 0 0 10px rgba(0,212,255,0.3);
+  flex-shrink: 0;
+}
+.health-hero-title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+.health-hero-title span {
+  background: linear-gradient(135deg, #ff5722, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.health-hero-sub {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  margin-top: 4px;
+}
+.health-energy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(255,87,34,0.15);
+  border: 1px solid rgba(255,87,34,0.35);
+  border-radius: 20px;
+  color: #ff5722;
+  font-size: 0.82rem;
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(255,87,34,0.25);
+}
+
+/* Biometric Control Sliders */
+.health-inputs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.health-input-card {
+  background: rgba(18,24,38,0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+}
+.health-input-card:hover {
+  border-color: rgba(255,87,34,0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255,87,34,0.15);
+}
+.h-input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.h-input-title {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+.h-input-val {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+.h-input-unit {
+  font-size: 0.8rem;
+  color: #ff5722;
+  margin-left: 3px;
+}
+.h-range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+.h-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff5722, #f59e0b);
+  box-shadow: 0 0 12px rgba(255,87,34,0.8);
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.h-range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+/* Body Aim Selector Cards */
+.aim-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.aim-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  text-align: left;
+}
+.aim-card:hover {
+  background: rgba(255,87,34,0.06);
+  border-color: rgba(255,87,34,0.4);
+}
+.aim-card.active {
+  background: linear-gradient(135deg, rgba(255,87,34,0.2), rgba(245,158,11,0.08));
+  border-color: #ff5722;
+  box-shadow: 0 0 20px rgba(255,87,34,0.3);
+}
+.aim-icon {
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+.aim-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+.aim-desc {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  line-height: 1.35;
+}
+
+/* Biometric Output & Targets Grid */
+.health-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.health-stat-pill {
+  background: rgba(18,24,38,0.85);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.health-stat-pill::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 4px;
+}
+.health-stat-pill.calories::after { background: #ff5722; box-shadow: 0 0 10px #ff5722; }
+.health-stat-pill.protein::after { background: #10b981; box-shadow: 0 0 10px #10b981; }
+.health-stat-pill.carbs::after { background: #00d4ff; box-shadow: 0 0 10px #00d4ff; }
+.health-stat-pill.water::after { background: #f59e0b; box-shadow: 0 0 10px #f59e0b; }
+.h-stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+.h-stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  margin-top: 6px;
+  font-weight: 600;
+}
+.h-stat-sub {
+  font-size: 0.72rem;
+  color: #8892b0;
+  margin-top: 4px;
+}
+
+/* Muscle Group Workout Navigation */
+.muscle-tabs-wrap {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.muscle-tab-btn {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--text-secondary);
+  padding: 9px 18px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.muscle-tab-btn:hover {
+  background: rgba(255,87,34,0.1);
+  color: #fff;
+}
+.muscle-tab-btn.active {
+  background: linear-gradient(135deg, #ff5722, #f59e0b);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 18px rgba(255,87,34,0.4);
+}
+
+/* Workout Cards Grid */
+.workout-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.exercise-card {
+  background: rgba(18,24,38,0.7);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  transition: all 0.25s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.exercise-card:hover {
+  border-color: rgba(255,87,34,0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+.exercise-card.completed {
+  border-color: #10b981;
+  background: rgba(16,185,129,0.06);
+}
+.ex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  gap: 10px;
+}
+.ex-name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+}
+.ex-tag {
+  font-size: 0.68rem;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background: rgba(255,87,34,0.15);
+  color: #ff5722;
+  font-weight: 700;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.ex-details {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+.ex-stat-item {
+  background: rgba(255,255,255,0.03);
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.ex-stat-item strong {
+  color: #fff;
+}
+.ex-form-tip {
+  font-size: 0.76rem;
+  color: #8892b0;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+.ex-btn-complete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.ex-btn-complete:hover {
+  background: rgba(16,185,129,0.2);
+  border-color: #10b981;
+  color: #10b981;
+}
+.exercise-card.completed .ex-btn-complete {
+  background: #10b981;
+  color: #fff;
+  border-color: #10b981;
+}
+
+/* Daily Workout Target Bar */
+.daily-workout-tracker-box {
+  background: rgba(18,24,38,0.85);
+  border: 1px solid rgba(255,87,34,0.3);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.d-workout-left {
+  flex: 1;
+  min-width: 200px;
+}
+.d-workout-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.d-workout-sub {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+.d-workout-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.d-workout-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff5722, #10b981);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+/* Paris Student Diet & Nutrition Section */
+.diet-container-card {
+  background: rgba(18,24,38,0.7);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 30px;
+}
+.diet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+.diet-category-pill {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+}
+.diet-cat-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.diet-food-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 0.8rem;
+}
+.diet-food-item:last-child {
+  border-bottom: none;
+}
+.diet-food-name {
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.diet-food-stat {
+  font-weight: 600;
+  color: #10b981;
+  font-size: 0.75rem;
+}
+
 </style>
 </head>
 <body>
@@ -1478,17 +1993,23 @@ input[type=number] { -moz-appearance: textfield; }
       <div class="nav-item" onclick="showView('tracker', this)">
         <span class="nav-icon">📊</span> Life Tracker
       </div>
+      <div class="nav-item" onclick="showView('health', this)" id="nav-health">
+        <span class="nav-icon">⚡</span> Physical Health <span class="badge-health-pro">PRO</span>
+      </div>
       <div class="nav-item" onclick="showView('settings', this)">
         <span class="nav-icon">⚙️</span> Settings
       </div>
     </div>
 
     <div class="sidebar-footer">
-      <div class="user-card">
-        <div class="user-avatar">DS</div>
+      <div class="user-card" onclick="showView('health')" style="cursor:pointer;" title="Click to view Physical Health & Athlete Profile">
+        <div class="user-avatar-wrap">
+          <img src="profile.jpg" alt="Pavan Kalyan" class="user-profile-img" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'user-avatar\'>PK</div>';">
+          <span class="avatar-status-dot"></span>
+        </div>
         <div class="user-info">
-          <div class="name">Data Scientist</div>
-          <div class="role">🗼 Paris, France</div>
+          <div class="name">Pavan Kalyan</div>
+          <div class="role">🗼 M2 Data Science · Paris</div>
         </div>
       </div>
     </div>
@@ -1504,8 +2025,11 @@ input[type=number] { -moz-appearance: textfield; }
         <button class="hamburger-btn" onclick="toggleSidebar()" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
-        <div class="mobile-logo">⬡ NexusDS</div>
-        <div class="mobile-date" id="mobile-date-dash"></div>
+        <div class="mobile-logo" onclick="showView('dashboard')">⬡ NexusDS</div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div class="mobile-date" id="mobile-date-dash"></div>
+          <img src="profile.jpg" alt="Pavan" class="mobile-avatar-pill" onclick="showView('health')">
+        </div>
       </div>
 
       <div style="padding: 32px 32px 0;" class="mobile-no-top-pad">
@@ -1780,6 +2304,251 @@ input[type=number] { -moz-appearance: textfield; }
     </div>
 
     <!-- ══════════ SETTINGS VIEW ══════════ -->
+    
+    <!-- ══════════ PHYSICAL HEALTH & GYM ATHLETIC VIEW ══════════ -->
+    <div id="view-health" class="view">
+      <!-- Mobile Header -->
+      <div class="mobile-header">
+        <button class="hamburger-btn" onclick="toggleSidebar()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="mobile-logo">⚡ Kinetic Physical Health</div>
+        <img src="profile.jpg" alt="Pavan" class="mobile-avatar-pill">
+      </div>
+
+      <div style="padding: 32px 32px 0;" class="mobile-no-top-pad">
+
+        <!-- Hero Section with LinkedIn Profile Avatar -->
+        <div class="health-hero">
+          <div class="health-profile-header">
+            <img src="profile.jpg" alt="Pavan Kalyan" class="health-avatar-large" onerror="this.onerror=null; this.src=''; this.style.display='none';">
+            <div>
+              <div class="health-hero-title">Athlete <span>Pavan Kalyan</span></div>
+              <div class="health-hero-sub">M2 Data Science • Paris | Biomechanics, Muscle Split & Cognitive Fuel</div>
+            </div>
+          </div>
+          <div class="health-energy-badge">
+            <span id="h-status-badge">⚡ Prime High-Performance Mode</span>
+          </div>
+        </div>
+
+        <!-- Biometric Profile Sliders -->
+        <div class="section-title" style="margin-bottom: 14px;">🧬 Biometric Parameters (Real-Time Reactive)</div>
+        <div class="health-inputs-grid">
+          <!-- Age -->
+          <div class="health-input-card">
+            <div class="h-input-header">
+              <span class="h-input-title">🎂 Age</span>
+              <span class="h-input-val"><span id="val-age">23</span><span class="h-input-unit">yrs</span></span>
+            </div>
+            <input type="range" class="h-range-slider" id="input-health-age" min="16" max="70" value="23" oninput="updateHealthBiometrics()">
+            <div style="font-size:0.7rem;color:var(--text-muted);margin-top:6px;" id="age-advice-text">Prime recovery rate & optimal testosterone profile.</div>
+          </div>
+
+          <!-- Height -->
+          <div class="health-input-card">
+            <div class="h-input-header">
+              <span class="h-input-title">📏 Height</span>
+              <span class="h-input-val"><span id="val-height">175</span><span class="h-input-unit">cm</span></span>
+            </div>
+            <input type="range" class="h-range-slider" id="input-health-height" min="145" max="210" value="175" oninput="updateHealthBiometrics()">
+            <div style="font-size:0.7rem;color:var(--text-muted);margin-top:6px;">Leverage for compound lifts & posture alignment.</div>
+          </div>
+
+          <!-- Weight -->
+          <div class="health-input-card">
+            <div class="h-input-header">
+              <span class="h-input-title">⚖️ Weight</span>
+              <span class="h-input-val"><span id="val-weight">72</span><span class="h-input-unit">kg</span></span>
+            </div>
+            <input type="range" class="h-range-slider" id="input-health-weight" min="45" max="130" value="72" oninput="updateHealthBiometrics()">
+            <div style="font-size:0.7rem;color:var(--text-muted);margin-top:6px;" id="bmi-status-text">BMI: 23.5 · Athletic & Healthy range.</div>
+          </div>
+
+          <!-- Activity Level -->
+          <div class="health-input-card">
+            <div class="h-input-header">
+              <span class="h-input-title">⚡ Training Frequency</span>
+              <span class="h-input-val" style="font-size:1.05rem;" id="val-activity">4-5 days/wk</span>
+            </div>
+            <select id="select-activity" onchange="updateHealthBiometrics()" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#fff;padding:8px 10px;border-radius:8px;outline:none;font-size:0.8rem;margin-top:4px;">
+              <option value="1.2">Desk Student (Sedentary)</option>
+              <option value="1.375">Light Training (1-2 days/wk)</option>
+              <option value="1.55" selected>Moderate Hypertrophy (3-5 days/wk)</option>
+              <option value="1.725">Intense Athlete (6-7 days/wk)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Body Aim Selection -->
+        <div class="section-title" style="margin-bottom: 14px;">🎯 Target Physique & Body Aim</div>
+        <div class="aim-selector-grid">
+          <div class="aim-card active" onclick="setBodyAim('lean', this)">
+            <div class="aim-icon">🏋️‍♂️</div>
+            <div class="aim-title">Lean Muscle & Definition</div>
+            <div class="aim-desc">Aesthetic V-taper, chiseled shoulders & sub-12% body fat.</div>
+          </div>
+          <div class="aim-card" onclick="setBodyAim('strength', this)">
+            <div class="aim-icon">⚡</div>
+            <div class="aim-title">Hypertrophy & Power</div>
+            <div class="aim-desc">Heavy compound progressive overload & maximum muscular density.</div>
+          </div>
+          <div class="aim-card" onclick="setBodyAim('shred', this)">
+            <div class="aim-icon">🔥</div>
+            <div class="aim-title">Metabolic Fat Burn</div>
+            <div class="aim-desc">High calorie torching, lean vascularity & endurance pacing.</div>
+          </div>
+          <div class="aim-card" onclick="setBodyAim('posture', this)">
+            <div class="aim-icon">🧘</div>
+            <div class="aim-title">Data Scientist Posture & Core</div>
+            <div class="aim-desc">Decompress spine, fix rounded shoulders & neck pain from desk work.</div>
+          </div>
+          <div class="aim-card" onclick="setBodyAim('stamina', this)">
+            <div class="aim-icon">🏃</div>
+            <div class="aim-title">Stamina & Agility</div>
+            <div class="aim-desc">VO2 max conditioning, running endurance & heart health.</div>
+          </div>
+        </div>
+
+        <!-- Dynamic Daily Targets & Macros Bar -->
+        <div class="section-title" style="margin-bottom: 14px;">📊 Daily Biometric Nutritional Targets (Auto-Calculated)</div>
+        <div class="health-stats-row">
+          <div class="health-stat-pill calories">
+            <div class="h-stat-num" id="calc-calories">2,480</div>
+            <div class="h-stat-label">Daily Calories (kcal)</div>
+            <div class="h-stat-sub" id="calc-cal-sub">Target for Lean Muscle Building</div>
+          </div>
+          <div class="health-stat-pill protein">
+            <div class="h-stat-num" id="calc-protein">144g</div>
+            <div class="h-stat-label">Daily Protein Target</div>
+            <div class="h-stat-sub" id="calc-pro-sub">2.0g per kg bodyweight</div>
+          </div>
+          <div class="health-stat-pill carbs">
+            <div class="h-stat-num" id="calc-carbs">290g</div>
+            <div class="h-stat-label">Clean Carbohydrates</div>
+            <div class="h-stat-sub">Brain Glycogen for Math & Coding</div>
+          </div>
+          <div class="health-stat-pill water">
+            <div class="h-stat-num" id="calc-water">3.2 L</div>
+            <div class="h-stat-label">Daily Hydration</div>
+            <div class="h-stat-sub">Cellular repair & electrolyte balance</div>
+          </div>
+        </div>
+
+        <!-- Daily Workout Target Checklist & Tracker -->
+        <div class="daily-workout-tracker-box">
+          <div class="d-workout-left">
+            <div class="d-workout-title">
+              <span>🏆 Daily Workout Target:</span>
+              <span id="d-workout-split-name" style="color:#ff5722;">Upper Body Power & Shoulders</span>
+            </div>
+            <div class="d-workout-sub" id="d-workout-count-text">0 / 5 Exercises Completed Today (0%)</div>
+            <div class="d-workout-progress-bar">
+              <div class="d-workout-progress-fill" id="d-workout-progress-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="resetTodayWorkout()" style="background:linear-gradient(135deg, #ff5722, #f59e0b);border:none;box-shadow:0 0 15px rgba(255,87,34,0.4);">
+            🔄 Reset Routine
+          </button>
+        </div>
+
+        <!-- Muscle Group Selector Tabs -->
+        <div class="section-title" style="margin-bottom: 12px;">🏋️‍♂️ Muscle Group Workout Routine</div>
+        <div class="muscle-tabs-wrap">
+          <button class="muscle-tab-btn active" onclick="switchMuscleTab('shoulders', this)">🎯 Shoulders (Delts & Traps)</button>
+          <button class="muscle-tab-btn" onclick="switchMuscleTab('arms', this)">💪 Arms & Hands (Biceps, Triceps, Grip)</button>
+          <button class="muscle-tab-btn" onclick="switchMuscleTab('chest-back', this)">🛡️ Chest & Upper Back</button>
+          <button class="muscle-tab-btn" onclick="switchMuscleTab('legs', this)">🦵 Legs (Quads, Hamstrings, Calves)</button>
+          <button class="muscle-tab-btn" onclick="switchMuscleTab('posture-core', this)">🧘 Desk Worker Posture & Core</button>
+        </div>
+
+        <!-- Workout Cards Grid -->
+        <div class="workout-cards-grid" id="workout-exercises-container">
+          <!-- Rendered dynamically by JS -->
+        </div>
+
+        <!-- Paris Student Diet & Nutrition Blueprint -->
+        <div class="diet-container-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+            <div class="section-title">🥗 Paris Student Nutrition Blueprint (High Protein & Smart Budget)</div>
+            <span style="font-size:0.75rem;color:#10b981;font-weight:700;background:rgba(16,185,129,0.12);padding:4px 10px;border-radius:12px;">
+              €5–€7 / day student target
+            </span>
+          </div>
+          <div style="font-size:0.83rem;color:var(--text-secondary);margin-top:6px;">
+            What to eat in Paris (Carrefour, Monoprix, Lidl) to effortlessly hit your protein and recovery targets:
+          </div>
+
+          <div class="diet-grid">
+            <div class="diet-category-pill">
+              <div class="diet-cat-title">🥩 High-Yield Proteins</div>
+              <div class="diet-food-item">
+                <span class="diet-food-name">🥚 Œufs bio (4 whole eggs)</span>
+                <span class="diet-food-stat">24g protein</span>
+              </div>
+              <div class="diet-food-item">
+                <span class="diet-food-name">🍗 Blanc de poulet (200g)</span>
+                <span class="diet-food-stat">46g protein</span>
+              </div>
+              <div class="diet-food-item">
+                <span class="diet-food-name">🥛 Fromage blanc 0% (300g)</span>
+                <span class="diet-food-stat">24g slow casein</span>
+              </div>
+              <div class="diet-food-item">
+                <span class="diet-food-name">🐟 Thon au naturel (1 can)</span>
+                <span class="diet-food-stat">28g protein</span>
+              </div>
+              <div class="diet-food-item">
+                <span class="diet-food-name">🌱 Lentilles Vertes du Puy (1 cup)</span>
+                <span class="diet-food-stat">18g protein + fiber</span>
+              </div>
+            </div>
+
+            <div class="diet-category-pill">
+              <div class="diet-cat-title">🌾 Complex Brain Glycogen</div>
+              <div class="diet-food-item">
+                <span class="diet-food-name">🥣 Flocons d'avoine (oats 80g)</span>
+                <span class="diet-food-stat">54g clean carbs</span>
+              </div>
+              <div class="diet-food-item">
+                <span class="diet-food-name">🍚 Riz basmati demi-complet</span>
+                <span class="diet-food-stat">Sustained focus</span>
+              </div>
+              <div class="diet-food-item">
+                <span class="diet-food-name">🍠 Patates douces (sweet potato)</span>
+                <span class="diet-food-stat">Vitamins A & C</span>
+              </div>
+              <div class="diet-food-item">
+                <span class="diet-food-name">🥖 Pain complet au levain</span>
+                <span class="diet-food-stat">Prebiotic gut fuel</span>
+              </div>
+            </div>
+
+            <div class="diet-category-pill">
+              <div class="diet-cat-title">🥑 Joint Recovery & Healthy Fats</div>
+              <div class="diet-food-item">
+                <span class="diet-food-name">🌰 Amandes / Noix (handful)</span>
+                <span class="diet-food-stat">Healthy Omega-3</span>
+              </div>
+              <div class="diet-food-item">
+                <span class="diet-food-name">🫒 Huile d'olive extra vierge</span>
+                <span class="diet-food-stat">Anti-inflammatory</span>
+              </div>
+              <div class="diet-food-item">
+                <span class="diet-food-name">🍫 Chocolat noir 85% (2 squares)</span>
+                <span class="diet-food-stat">Flavonoids & focus</span>
+              </div>
+              <div class="diet-food-item">
+                <span class="diet-food-name">🍌 Banane mûre</span>
+                <span class="diet-food-stat">Potassium anti-cramp</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <div id="view-settings" class="view">
       <!-- Mobile Header -->
       <div class="mobile-header">
@@ -3209,14 +3978,340 @@ function boot() {
   // Initialize range backgrounds for jarvis modal
   ['sleep','study','exercise','water'].forEach(k => updateRangeBackground(k));
 
+
   // Hide loading screen after 2 seconds
   setTimeout(() => {
     document.getElementById('loading-screen').classList.add('hidden');
     document.getElementById('app').classList.add('visible');
     // Animate stats after reveal
     setTimeout(updateStats, 300);
+    initHealthProfile();
   }, 2000);
+
 }
+
+
+/* ═══════════════════════════════════════════════════
+   PHYSICAL HEALTH & GYM ATHLETIC JAVASCRIPT SYSTEM
+═══════════════════════════════════════════════════ */
+let healthProfile = {
+  age: 23,
+  height: 175,
+  weight: 72,
+  activity: 1.55,
+  aim: 'lean',
+  currentMuscleTab: 'shoulders',
+  completedExercises: []
+};
+
+// Workouts database organized by muscle group
+const WORKOUT_DATABASE = {
+  'shoulders': [
+    { id: 'sh1', name: 'Standing Overhead Dumbbell Press', sets: '4 Sets', reps: '8-10 Reps', rest: '90s', intensity: 'Heavy', tag: 'Anterior Delt', tip: 'Keep core tight, do not arch lower back. Press dumbbells directly overhead.' },
+    { id: 'sh2', name: 'Incline Dumbbell Lateral Raises', sets: '4 Sets', reps: '12-15 Reps', rest: '60s', intensity: 'Hypertrophy', tag: 'Lateral Delt', tip: 'Control the 3-second descent. Build wide 3D shoulder caps.' },
+    { id: 'sh3', name: 'Rear Delt Face Pulls (or Band Pull-aparts)', sets: '3 Sets', reps: '15-20 Reps', rest: '45s', intensity: 'Posture', tag: 'Rear Delt', tip: 'Crucial for fixing rounded shoulders from laptop coding. Squeeze shoulder blades.' },
+    { id: 'sh4', name: 'Arnold Dumbbell Press', sets: '3 Sets', reps: '10-12 Reps', rest: '75s', intensity: 'Compound', tag: 'Full Shoulder', tip: 'Rotate wrists smoothly from front rack to overhead lock.' },
+    { id: 'sh5', name: 'Dumbbell Shrugs with 2s Squeeze', sets: '3 Sets', reps: '12 Reps', rest: '60s', intensity: 'Hypertrophy', tag: 'Upper Traps', tip: 'Pause at the top peak contraction. Do not roll shoulders.' }
+  ],
+  'arms': [
+    { id: 'arm1', name: 'Incline Dumbbell Bicep Curls', sets: '4 Sets', reps: '10-12 Reps', rest: '60s', intensity: 'Stretch', tag: 'Biceps Long Head', tip: 'Full elbow extension at bottom for maximum bicep stretch and peak development.' },
+    { id: 'arm2', name: 'Overhead Tricep Extension (Dumbbell/Cable)', sets: '4 Sets', reps: '10-12 Reps', rest: '60s', intensity: 'Mass', tag: 'Triceps Long Head', tip: 'Keep elbows tucked. The long head accounts for 60% of total upper arm size.' },
+    { id: 'arm3', name: 'Cross-Body Hammer Curls', sets: '3 Sets', reps: '10-12 Reps', rest: '60s', intensity: 'Forearm / Width', tag: 'Brachialis & Forearm', tip: 'Develops forearm thickness and pushes biceps upward.' },
+    { id: 'arm4', name: 'Bench Dips or Parallel Bar Dips', sets: '3 Sets', reps: '12-15 Reps', rest: '60s', intensity: 'Bodyweight', tag: 'Triceps & Chest', tip: 'Maintain vertical torso to isolate triceps lock.' },
+    { id: 'arm5', name: 'Farmer Heavy Dumbbell Holds (Grip & Hands)', sets: '3 Sets', reps: '45-60 Seconds', rest: '60s', intensity: 'Endurance', tag: 'Grip & Wrist', tip: 'Builds iron grip strength and prevents typing wrist fatigue.' }
+  ],
+  'chest-back': [
+    { id: 'cb1', name: 'Incline Dumbbell Bench Press', sets: '4 Sets', reps: '8-10 Reps', rest: '90s', intensity: 'Heavy Compound', tag: 'Upper Clavicular Chest', tip: 'Angle bench at 30 degrees. Focus on upper chest shelf.' },
+    { id: 'cb2', name: 'Chest-Supported Row / One-Arm DB Row', sets: '4 Sets', reps: '10-12 Reps', rest: '75s', intensity: 'Thickness', tag: 'Lat & Rhomboids', tip: 'Pull elbow toward hip pocket, avoiding bicep over-activation.' },
+    { id: 'cb3', name: 'Wide Grip Lat Pulldown / Strict Pull-Ups', sets: '4 Sets', reps: '8-10 Reps', rest: '90s', intensity: 'Width', tag: 'Latissimus Dorsi', tip: 'Drive with elbows down into back pockets for V-taper frame.' },
+    { id: 'cb4', name: 'Push-Up to Downward Dog Stretch', sets: '3 Sets', reps: '12-15 Reps', rest: '45s', intensity: 'Mobility', tag: 'Chest & Serratus', tip: 'Smooth transition from push-up to shoulder flexion stretch.' }
+  ],
+  'legs': [
+    { id: 'leg1', name: 'Goblet Squats or Barbell Back Squats', sets: '4 Sets', reps: '8-10 Reps', rest: '90s', intensity: 'High Output', tag: 'Quads & Glutes', tip: 'Deep full depth squat. Knee sleeves or solid shoes recommended.' },
+    { id: 'leg2', name: 'Romanian Dumbbell Deadlifts', sets: '3 Sets', reps: '10-12 Reps', rest: '75s', intensity: 'Posterior Chain', tag: 'Hamstrings & Glutes', tip: 'Push hips backward until deep hamstring stretch. Keep back flat.' },
+    { id: 'leg3', name: 'Bulgarian Split Squats', sets: '3 Sets', reps: '10 Reps / Leg', rest: '60s', intensity: 'Unilateral', tag: 'Quads & Hip Stabilizer', tip: 'Balances left/right strength discrepancies and builds stability.' },
+    { id: 'leg4', name: 'Standing Calf Raises with 2s Pause', sets: '4 Sets', reps: '15 Reps', rest: '45s', intensity: 'Burnout', tag: 'Gastrocnemius', tip: 'Full stretch at bottom, explode up on toes and hold for 2 seconds.' }
+  ],
+  'posture-core': [
+    { id: 'pos1', name: 'Dead Hang from Pull-Up Bar', sets: '3 Sets', reps: '60 Seconds', rest: '45s', intensity: 'Spine Decompress', tag: 'Spine & Shoulders', tip: 'Gravity uncompresses vertebrae after hours sitting at desk.' },
+    { id: 'pos2', name: 'Bird-Dog with Isometric Hold', sets: '3 Sets', reps: '10 Reps / Side', rest: '30s', intensity: 'Core Stability', tag: 'Deep Abdominals & Glutes', tip: 'Keep pelvis level, extend opposite arm and leg, hold 2s.' },
+    { id: 'pos3', name: 'Side Plank with Hip Dips', sets: '3 Sets', reps: '30s / Side', rest: '30s', intensity: 'Oblique Support', tag: 'Obliques & QL', tip: 'Strengthens lateral core to prevent lower back sitting aches.' },
+    { id: 'pos4', name: 'Doorway Pec Stretch & Wall Angels', sets: '3 Sets', reps: '15 Reps', rest: '30s', intensity: 'Posture Reversal', tag: 'Chest Opening', tip: 'Direct antidote to forward-head computer posture.' }
+  ]
+};
+
+function initHealthProfile() {
+  const saved = localStorage.getItem('nexus_health_profile');
+  if (saved) {
+    try {
+      healthProfile = Object.assign(healthProfile, JSON.parse(saved));
+    } catch(e) {}
+  }
+
+  // Load today completed exercises
+  const todayKey = 'nexus_workout_' + new Date().toISOString().split('T')[0];
+  const savedEx = localStorage.getItem(todayKey);
+  if (savedEx) {
+    try { healthProfile.completedExercises = JSON.parse(savedEx); } catch(e) {}
+  }
+
+  // Sync inputs with state
+  const ageInp = document.getElementById('input-health-age');
+  const hInp = document.getElementById('input-health-height');
+  const wInp = document.getElementById('input-health-weight');
+  const actInp = document.getElementById('select-activity');
+
+  if (ageInp) ageInp.value = healthProfile.age;
+  if (hInp) hInp.value = healthProfile.height;
+  if (wInp) wInp.value = healthProfile.weight;
+  if (actInp) actInp.value = healthProfile.activity;
+
+  // Set aim active card
+  document.querySelectorAll('.aim-card').forEach(c => c.classList.remove('active'));
+  const aimCards = document.querySelectorAll('.aim-card');
+  if (healthProfile.aim === 'lean' && aimCards[0]) aimCards[0].classList.add('active');
+  if (healthProfile.aim === 'strength' && aimCards[1]) aimCards[1].classList.add('active');
+  if (healthProfile.aim === 'shred' && aimCards[2]) aimCards[2].classList.add('active');
+  if (healthProfile.aim === 'posture' && aimCards[3]) aimCards[3].classList.add('active');
+  if (healthProfile.aim === 'stamina' && aimCards[4]) aimCards[4].classList.add('active');
+
+  updateHealthBiometrics();
+  renderWorkoutExercises();
+}
+
+function updateHealthBiometrics() {
+  const age = parseInt(document.getElementById('input-health-age').value) || 23;
+  const height = parseInt(document.getElementById('input-health-height').value) || 175;
+  const weight = parseInt(document.getElementById('input-health-weight').value) || 72;
+  const activity = parseFloat(document.getElementById('select-activity').value) || 1.55;
+
+  healthProfile.age = age;
+  healthProfile.height = height;
+  healthProfile.weight = weight;
+  healthProfile.activity = activity;
+
+  // Update visual text displays
+  document.getElementById('val-age').innerText = age;
+  document.getElementById('val-height').innerText = height;
+  document.getElementById('val-weight').innerText = weight;
+
+  // Age specific advice
+  const ageAdvice = document.getElementById('age-advice-text');
+  if (ageAdvice) {
+    if (age < 25) {
+      ageAdvice.innerText = 'High protein synthesis & rapid glycogen replenishment. Train with explosive intensity!';
+    } else if (age <= 35) {
+      ageAdvice.innerText = 'Peak muscular power window. Focus on heavy compound lifts and 7-8h sleep recovery.';
+    } else {
+      ageAdvice.innerText = 'Prioritize joint longevity, dynamic warm-up, and 48-hour recovery between heavy splits.';
+    }
+  }
+
+  // BMI Calculation
+  const hMeters = height / 100;
+  const bmi = (weight / (hMeters * hMeters)).toFixed(1);
+  const bmiStatus = document.getElementById('bmi-status-text');
+  if (bmiStatus) {
+    let cat = 'Athletic & Healthy';
+    if (bmi < 18.5) cat = 'Lean / Underweight - Surplus Advised';
+    else if (bmi >= 25 && bmi < 30) cat = 'Muscular / High Mass Frame';
+    else if (bmi >= 30) cat = 'Conditioning & Fat Burn Focus';
+    bmiStatus.innerText = `BMI: ${bmi} · ${cat}`;
+  }
+
+  // BMR (Mifflin-St Jeor formula for men: 10*W + 6.25*H - 5*A + 5)
+  const bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+  const tdee = Math.round(bmr * activity);
+
+  // Caloric Target based on Body Aim
+  let targetCalories = tdee;
+  let proteinRatio = 2.0; // g per kg
+  let calSubText = 'Target for Clean Lean Muscle';
+  let badgeText = '⚡ High-Performance Athletic Mode';
+
+  if (healthProfile.aim === 'lean') {
+    targetCalories = Math.round(tdee + 200); // Clean lean surplus
+    proteinRatio = 2.0;
+    calSubText = 'Lean Bulk (+200 kcal surplus)';
+    badgeText = '🏋️‍♂️ Aesthetic Lean V-Taper';
+  } else if (healthProfile.aim === 'strength') {
+    targetCalories = Math.round(tdee + 450); // Power surplus
+    proteinRatio = 2.2;
+    calSubText = 'Strength & Power Surplus (+450 kcal)';
+    badgeText = '⚡ Maximum Power & Mass';
+  } else if (healthProfile.aim === 'shred') {
+    targetCalories = Math.round(tdee - 400); // Deficit
+    proteinRatio = 2.3; // Higher protein to spare muscle
+    calSubText = 'Fat Burn Deficit (-400 kcal)';
+    badgeText = '🔥 Metabolic Shred & Conditioning';
+  } else if (healthProfile.aim === 'posture') {
+    targetCalories = tdee;
+    proteinRatio = 1.8;
+    calSubText = 'Maintenance & Spine Recovery';
+    badgeText = '🧘 Data Scientist Spine & Posture Shield';
+  } else if (healthProfile.aim === 'stamina') {
+    targetCalories = Math.round(tdee + 150);
+    proteinRatio = 1.7;
+    calSubText = 'Endurance & High VO2 Output';
+    badgeText = '🏃 Cardio Stamina & Longevity';
+  }
+
+  // Protein, Carbs, Water
+  const targetProtein = Math.round(weight * proteinRatio);
+  const proteinCals = targetProtein * 4;
+  const fatCals = Math.round(targetCalories * 0.25);
+  const remainingCarbCals = Math.max(0, targetCalories - proteinCals - fatCals);
+  const targetCarbs = Math.round(remainingCarbCals / 4);
+  const targetWater = (weight * 0.035 + (activity > 1.4 ? 0.8 : 0.4)).toFixed(1);
+
+  // Update DOM elements
+  document.getElementById('calc-calories').innerText = targetCalories.toLocaleString();
+  document.getElementById('calc-cal-sub').innerText = calSubText;
+  document.getElementById('calc-protein').innerText = targetProtein + 'g';
+  document.getElementById('calc-pro-sub').innerText = `${proteinRatio}g per kg bodyweight`;
+  document.getElementById('calc-carbs').innerText = targetCarbs + 'g';
+  document.getElementById('calc-water').innerText = targetWater + ' L';
+  document.getElementById('h-status-badge').innerText = badgeText;
+
+  // Persist
+  localStorage.setItem('nexus_health_profile', JSON.stringify(healthProfile));
+}
+
+function setBodyAim(aim, el) {
+  healthProfile.aim = aim;
+  document.querySelectorAll('.aim-card').forEach(c => c.classList.remove('active'));
+  if (el) el.classList.add('active');
+
+  // Suggest relevant muscle tab
+  if (aim === 'posture') switchMuscleTab('posture-core');
+  else if (aim === 'lean') switchMuscleTab('shoulders');
+  else if (aim === 'strength') switchMuscleTab('chest-back');
+
+  updateHealthBiometrics();
+}
+
+function switchMuscleTab(tab, el) {
+  healthProfile.currentMuscleTab = tab;
+  document.querySelectorAll('.muscle-tab-btn').forEach(b => b.classList.remove('active'));
+  if (el) {
+    el.classList.add('active');
+  } else {
+    const btns = document.querySelectorAll('.muscle-tab-btn');
+    if (tab === 'shoulders' && btns[0]) btns[0].classList.add('active');
+    if (tab === 'arms' && btns[1]) btns[1].classList.add('active');
+    if (tab === 'chest-back' && btns[2]) btns[2].classList.add('active');
+    if (tab === 'legs' && btns[3]) btns[3].classList.add('active');
+    if (tab === 'posture-core' && btns[4]) btns[4].classList.add('active');
+  }
+
+  // Update split name label
+  const titles = {
+    'shoulders': '🎯 3D Shoulders & Deltoid Hypertrophy',
+    'arms': '💪 Arms, Biceps, Triceps & Forearm Grip',
+    'chest-back': '🛡️ Chest Power & Upper Back Width',
+    'legs': '🦵 Quad Explosiveness, Hamstrings & Calves',
+    'posture-core': '🧘 Anti-Desk Posture, Spine Decompression & Core'
+  };
+  const splitLabel = document.getElementById('d-workout-split-name');
+  if (splitLabel) splitLabel.innerText = titles[tab] || 'Workout Routine';
+
+  renderWorkoutExercises();
+}
+
+function renderWorkoutExercises() {
+  const container = document.getElementById('workout-exercises-container');
+  if (!container) return;
+
+  const exercises = WORKOUT_DATABASE[healthProfile.currentMuscleTab] || WORKOUT_DATABASE['shoulders'];
+  const completed = healthProfile.completedExercises || [];
+
+  container.innerHTML = exercises.map(ex => {
+    const isDone = completed.includes(ex.id);
+    return `
+      <div class="exercise-card ${isDone ? 'completed' : ''}" id="card-${ex.id}">
+        <div>
+          <div class="ex-header">
+            <div class="ex-name">${ex.name}</div>
+            <span class="ex-tag">${ex.tag}</span>
+          </div>
+          <div class="ex-details">
+            <span class="ex-stat-item"><strong>${ex.sets}</strong></span>
+            <span class="ex-stat-item"><strong>${ex.reps}</strong></span>
+            <span class="ex-stat-item">Rest: <strong>${ex.rest}</strong></span>
+          </div>
+          <div class="ex-form-tip">💡 ${ex.tip}</div>
+        </div>
+        <button class="ex-btn-complete" onclick="toggleExerciseComplete('${ex.id}')">
+          ${isDone ? '✅ Finished Set' : '⚪ Mark Done'}
+        </button>
+      </div>
+    `;
+  }).join('');
+
+  updateWorkoutProgress();
+}
+
+function toggleExerciseComplete(id) {
+  if (!healthProfile.completedExercises) healthProfile.completedExercises = [];
+  const idx = healthProfile.completedExercises.indexOf(id);
+
+  if (idx > -1) {
+    healthProfile.completedExercises.splice(idx, 1);
+  } else {
+    healthProfile.completedExercises.push(id);
+    if (typeof triggerConfetti === 'function') triggerConfetti();
+    if (typeof showToast === 'function') showToast('Exercise Complete! Squeeze & rest 💪');
+  }
+
+  const todayKey = 'nexus_workout_' + new Date().toISOString().split('T')[0];
+  localStorage.setItem(todayKey, JSON.stringify(healthProfile.completedExercises));
+
+  renderWorkoutExercises();
+}
+
+function updateWorkoutProgress() {
+  const exercises = WORKOUT_DATABASE[healthProfile.currentMuscleTab] || WORKOUT_DATABASE['shoulders'];
+  const total = exercises.length;
+  const doneCount = exercises.filter(ex => (healthProfile.completedExercises || []).includes(ex.id)).length;
+  const pct = Math.round((doneCount / total) * 100);
+
+  const fill = document.getElementById('d-workout-progress-fill');
+  const countText = document.getElementById('d-workout-count-text');
+
+  if (fill) fill.style.width = pct + '%';
+  if (countText) {
+    countText.innerText = `${doneCount} / ${total} Exercises Completed Today (${pct}%)`;
+    if (pct === 100) {
+      countText.innerHTML = `<span style="color:#10b981;font-weight:700;">🔥 DAILY ROUTINE CRUSHED! Excellent Work Pavan!</span>`;
+    }
+  }
+}
+
+function resetTodayWorkout() {
+  healthProfile.completedExercises = [];
+  const todayKey = 'nexus_workout_' + new Date().toISOString().split('T')[0];
+  localStorage.removeItem(todayKey);
+  renderWorkoutExercises();
+  if (typeof showToast === 'function') showToast('Workout routine reset for today');
+}
+
+// Hook into showView
+const origShowView = window.showView;
+window.showView = function(id, navEl) {
+  if (typeof origShowView === 'function') {
+    origShowView(id, navEl);
+  } else {
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    const target = document.getElementById('view-' + id);
+    if (target) target.classList.add('active');
+    if (navEl) navEl.classList.add('active');
+  }
+
+  if (id === 'health') {
+    initHealthProfile();
+  }
+};
 
 window.addEventListener('DOMContentLoaded', boot);
 </script>
